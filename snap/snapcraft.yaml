@@ -1,0 +1,26 @@
+name: bandwhich-carroarmato0
+base: core18
+version: '0.8.0'
+summary: Terminal bandwidth utilization tool (formerly known as "what") 
+description: |
+  bandwhich sniffs a given network interface and records IP packet size, cross referencing it with the /proc filesystem on linux or lsof on macOS.
+  It is responsive to the terminal window size, displaying less info if there is no room for it.
+  It will also attempt to resolve ips to their host name in the background using reverse DNS on a best effort basis.
+
+  Upstream developer: https://github.com/imsnif/bandwhich
+
+grade: stable
+confinement: classic
+
+apps:
+  bandwhich:
+    command: bandwhich
+    plugs:
+      - network
+      - network-observe
+      - system-observe
+
+parts:
+  bandwhich:
+    source: https://github.com/imsnif/bandwhich/archive/${SNAPCRAFT_PROJECT_VERSION}.tar.gz
+    plugin: rust
