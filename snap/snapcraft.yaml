@@ -1,6 +1,6 @@
 name: bandwhich-carroarmato0
 base: core18
-version: '0.8.0'
+version: '0.11.0'
 summary: Terminal bandwidth utilization tool (formerly known as "what") 
 description: |
   bandwhich sniffs a given network interface and records IP packet size, cross referencing it with the /proc filesystem on linux or lsof on macOS.
